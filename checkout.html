@@ -97,7 +97,7 @@
                             <p data-cart-description>Selecciona un rango para revisar el detalle.</p>
                             <ul data-cart-benefits></ul>
                         </article>
-                        <aside class="cart-summary-card">
+                        <aside class="cart-summary-card" aria-label="Resumen del carrito">
                             <h3>Carrito</h3>
                             <div class="summary-line">
                                 <span>Tipo de plan</span>
@@ -130,6 +130,7 @@
                             <h2>Datos del cliente</h2>
                         </div>
                     </div>
+                    <!-- [html-validate-disable-next wcag/h32 -- asistente multipaso: la navegacion la gobierna checkout.js con data-next-step, no un submit] -->
                     <form class="checkout-form" id="customer-form" novalidate>
                         <div class="checkout-field">
                             <label for="customer-name">Nombre completo</label>
@@ -184,6 +185,7 @@
                         </div>
                         <p class="checkout-note">EMSAFE</p>
                     </div>
+                    <!-- [html-validate-disable-next wcag/h32 -- asistente multipaso: la navegacion la gobierna checkout.js con data-next-step, no un submit] -->
                     <form class="checkout-form" id="payment-form" novalidate>
                         <div class="checkout-field">
                             <label for="card-holder">Nombre del titular</label>

@@ -1,0 +1,48 @@
+# CI de la landing: sitio estatico sin build, asi que lo que se puede romper es
+# el HTML, la sintaxis del JS y las rutas a los assets. Eso es lo que se valida.
+#
+# No hay DDD aqui a proposito: son 3 paginas y ~550 lineas de JS sin una sola
+# llamada de red ni estado compartido. No hay dominio que modelar, y crear
+# domain/application/infrastructure seria dejar carpetas vacias.
+#
+# Tampoco hay package.json: las herramientas se invocan con npx bajo demanda
+# para no meterle un arbol de node_modules a un sitio de 18 archivos.
+
+name: CI — Landing
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validar HTML, JS y enlaces
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+
+      # Sin bundler nadie compila estos ficheros: un parentesis sin cerrar
+      # llegaria a produccion y solo se veria en la consola del navegador.
+      - name: Sintaxis del JavaScript
+        run: |
+          for f in scripts/*.js; do
+            echo "  $f"
+            node --check "$f"
+          done
+
+      # Incluye reglas WCAG. Las dos excepciones del asistente de checkout
+      # estan silenciadas en linea, junto al motivo.
+      # Version exacta a proposito: con un rango (@11) npx resolvio mal en
+      # local y reventó con "Cannot read properties of null (edgesOut)".
+      - name: Validar el HTML
+        run: npx -y html-validate@11.17.0 index.html checkout.html navbar/login.html
+
+      - name: Comprobar que no hay enlaces ni assets rotos
+        run: node tools/check-links.mjs
