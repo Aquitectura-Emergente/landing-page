@@ -101,7 +101,9 @@
     "title": "Acerca de EMSafe",
     "product": {
       "title": "Acerca del producto",
-      "text": "EMSafe es una plataforma de monitoreo continuo de campos electromagnéticos no ionizantes que integra dispositivos IoT, servicios en la nube, una aplicación móvil y un portal web. En plantas de fundición y metalmecánica, cada operario lleva un dosímetro personal y el responsable de seguridad y salud en el trabajo (SSO) gestiona los umbrales y la evidencia desde el portal web. En el hogar, un sensor fijo registra los niveles de cada ambiente y la app permite cortar un enchufe inteligente ante un nivel de riesgo."
+      "text": "EMSafe es una plataforma de monitoreo continuo de campos electromagnéticos no ionizantes que integra dispositivos IoT, servicios en la nube, una aplicación móvil y un portal web. En plantas de fundición y metalmecánica, cada operario lleva un dosímetro personal y el responsable de seguridad y salud en el trabajo (SSO) gestiona los umbrales y la evidencia desde el portal web. En el hogar, un sensor fijo registra los niveles de cada ambiente y la app permite cortar un enchufe inteligente ante un nivel de riesgo.",
+      "videoHeading": "Conoce más sobre nuestro producto:",
+      "videoTitle": "Video sobre el producto EMSafe"
     },
     "team": {
       "title": "Acerca del equipo",

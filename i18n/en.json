@@ -101,7 +101,9 @@
     "title": "About EMSafe",
     "product": {
       "title": "About the product",
-      "text": "EMSafe is a platform for continuous monitoring of non-ionizing electromagnetic fields that brings together IoT devices, cloud services, a mobile app, and a web portal. In foundries and metalworking plants, each worker wears a personal dosimeter, and the occupational health and safety (OHS) manager handles thresholds and evidence from the web portal. At home, a fixed sensor records the levels in each room, and the app can switch off a smart plug when a risk level is reached."
+      "text": "EMSafe is a platform for continuous monitoring of non-ionizing electromagnetic fields that brings together IoT devices, cloud services, a mobile app, and a web portal. In foundries and metalworking plants, each worker wears a personal dosimeter, and the occupational health and safety (OHS) manager handles thresholds and evidence from the web portal. At home, a fixed sensor records the levels in each room, and the app can switch off a smart plug when a risk level is reached.",
+      "videoHeading": "Learn more about our product:",
+      "videoTitle": "Video about the EMSafe product"
     },
     "team": {
       "title": "About the team",

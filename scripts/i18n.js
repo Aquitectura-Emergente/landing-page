@@ -21,7 +21,11 @@
     const LANGS = { en: 'en-US', es: 'es-419' };
     const DEFAULT_LANG = 'en';
     const STORAGE_KEY = 'emsafe-lang';
-    const baseUrl = new URL('../i18n/', document.currentScript.src);
+    const scriptUrl = new URL(document.currentScript.src);
+    const baseUrl = new URL('../i18n/', scriptUrl);
+    // Los JSON heredan el ?v= del <script>: al subir la version se renuevan
+    // tambien las traducciones en la cache del navegador.
+    const version = scriptUrl.search;
 
     let dictionary = {};
 
@@ -97,7 +101,7 @@
     async function setLang(requested) {
         const lang = Object.prototype.hasOwnProperty.call(LANGS, requested) ? requested : DEFAULT_LANG;
         try {
-            const response = await fetch(new URL(`${lang}.json`, baseUrl));
+            const response = await fetch(new URL(`${lang}.json${version}`, baseUrl));
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             dictionary = await response.json();
         } catch (error) {
