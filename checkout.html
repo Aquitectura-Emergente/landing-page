@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMSafe - Checkout</title>
+    <title data-i18n="meta.checkout.title">EMSafe | Checkout</title>
+    <meta name="description" content="Subscribe to the EMSafe Premium plan for continuous monitoring of electromagnetic levels at home." data-i18n-attr="content:meta.checkout.description">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -16,10 +17,16 @@
                     <span>EMSafe</span>
                 </a>
             </div>
-            <a href="index.html#plans" class="checkout-back-link">
-                <i class="fas fa-arrow-left"></i>
-                Volver a planes
-            </a>
+            <div class="checkout-header-actions">
+                <div class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:nav.language">
+                    <button type="button" class="lang-option" data-lang="en" lang="en" aria-label="English" aria-pressed="true">EN</button>
+                    <button type="button" class="lang-option" data-lang="es" lang="es" aria-label="Español" aria-pressed="false">ES</button>
+                </div>
+                <a href="index.html#plans" class="checkout-back-link" data-i18n="checkout.backToPlans">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to plans
+                </a>
+            </div>
         </nav>
     </header>
 
@@ -27,38 +34,38 @@
         <section class="checkout-hero">
             <div class="container checkout-hero-content">
                 <div>
-                    <span class="checkout-kicker">Suscripcion EMSafe</span>
-                    <h1>Configura tu plan de monitoreo</h1>
-                    <p>Revisa tu plan, completa tus datos y activa tu acceso a la app EMSafe.</p>
+                    <span class="checkout-kicker" data-i18n="checkout.kicker">EMSafe subscription</span>
+                    <h1 data-i18n="checkout.title">Set up your monitoring plan</h1>
+                    <p data-i18n="checkout.intro">Review your plan, enter your details, and activate your access to the EMSafe app.</p>
                 </div>
                 <div class="checkout-mini-summary">
-                    <span>Plan seleccionado</span>
+                    <span data-i18n="checkout.selectedPlan">Selected plan</span>
                     <strong data-selected-type>Premium</strong>
                 </div>
             </div>
         </section>
 
         <section class="checkout-flow container">
-            <aside class="checkout-steps" aria-label="Progreso del checkout">
-                <button class="checkout-step-button active" type="button" data-step-button="1">
+            <aside class="checkout-steps" aria-label="Checkout progress" data-i18n-attr="aria-label:checkout.progress">
+                <button class="checkout-step-button active" type="button" data-step-button="1" data-i18n="checkout.steps.plan">
                     <span>1</span>
                     Plan
                 </button>
-                <button class="checkout-step-button" type="button" data-step-button="2">
+                <button class="checkout-step-button" type="button" data-step-button="2" data-i18n="checkout.steps.cart">
                     <span>2</span>
-                    Carrito
+                    Cart
                 </button>
-                <button class="checkout-step-button" type="button" data-step-button="3">
+                <button class="checkout-step-button" type="button" data-step-button="3" data-i18n="checkout.steps.customer">
                     <span>3</span>
-                    Cliente
+                    Customer
                 </button>
-                <button class="checkout-step-button" type="button" data-step-button="4">
+                <button class="checkout-step-button" type="button" data-step-button="4" data-i18n="checkout.steps.payment">
                     <span>4</span>
-                    Pago
+                    Payment
                 </button>
-                <button class="checkout-step-button" type="button" data-step-button="5">
+                <button class="checkout-step-button" type="button" data-step-button="5" data-i18n="checkout.steps.confirmation">
                     <span>5</span>
-                    Confirmacion
+                    Confirmation
                 </button>
             </aside>
 
@@ -66,22 +73,22 @@
                 <section class="checkout-panel active" data-step="1">
                     <div class="checkout-panel-header">
                         <div>
-                            <span>Paso 1</span>
-                            <h2>Confirma tu plan</h2>
+                            <span data-i18n="checkout.step1.label">Step 1</span>
+                            <h2 data-i18n="checkout.step1.title">Confirm your plan</h2>
                         </div>
                     </div>
                     <div class="range-grid" data-plan-options></div>
                     <div class="checkout-actions">
-                        <a href="index.html#plans" class="secondary-button">Volver</a>
-                        <button type="button" class="cta-button" data-next-step>Continuar</button>
+                        <a href="index.html#plans" class="secondary-button" data-i18n="checkout.back">Back</a>
+                        <button type="button" class="cta-button" data-next-step data-i18n="checkout.continue">Continue</button>
                     </div>
                 </section>
 
                 <section class="checkout-panel" data-step="2">
                     <div class="checkout-panel-header">
                         <div>
-                            <span>Paso 2</span>
-                            <h2>Resumen del pedido</h2>
+                            <span data-i18n="checkout.step2.label">Step 2</span>
+                            <h2 data-i18n="checkout.step2.title">Order summary</h2>
                         </div>
                     </div>
                     <div class="cart-layout">
@@ -89,101 +96,101 @@
                             <div class="cart-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
-                            <h3 data-cart-name>Plan EMSafe</h3>
-                            <p data-cart-description>Selecciona un rango para revisar el detalle.</p>
+                            <h3 data-cart-name>Premium</h3>
+                            <p data-cart-description></p>
                             <ul data-cart-benefits></ul>
                         </article>
-                        <aside class="cart-summary-card" aria-label="Resumen del carrito">
-                            <h3>Carrito</h3>
+                        <aside class="cart-summary-card" aria-label="Cart summary" data-i18n-attr="aria-label:checkout.cart.label">
+                            <h3 data-i18n="checkout.cart.title">Cart</h3>
                             <div class="summary-line">
-                                <span>Plan</span>
+                                <span data-i18n="checkout.cart.plan">Plan</span>
                                 <strong data-cart-type>Premium</strong>
                             </div>
                             <div class="summary-line">
-                                <span>Segmento</span>
-                                <strong data-cart-range>Hogar</strong>
+                                <span data-i18n="checkout.cart.segment">Segment</span>
+                                <strong data-cart-range>Home</strong>
                             </div>
                             <div class="summary-line">
-                                <span>Precio mensual</span>
-                                <strong data-cart-price>S/ 14,90/mes</strong>
+                                <span data-i18n="checkout.cart.monthlyPrice">Monthly price</span>
+                                <strong data-cart-price>S/ 14.90/month</strong>
                             </div>
                             <div class="summary-line total">
-                                <span>Total mensual</span>
-                                <strong data-cart-total>S/ 14,90/mes</strong>
+                                <span data-i18n="checkout.cart.monthlyTotal">Monthly total</span>
+                                <strong data-cart-total>S/ 14.90/month</strong>
                             </div>
                         </aside>
                     </div>
                     <div class="checkout-actions">
-                        <button type="button" class="secondary-button" data-prev-step>Anterior</button>
-                        <button type="button" class="cta-button" data-next-step>Continuar al cliente</button>
+                        <button type="button" class="secondary-button" data-prev-step data-i18n="checkout.previous">Previous</button>
+                        <button type="button" class="cta-button" data-next-step data-i18n="checkout.step2.next">Continue to customer details</button>
                     </div>
                 </section>
 
                 <section class="checkout-panel" data-step="3">
                     <div class="checkout-panel-header">
                         <div>
-                            <span>Paso 3</span>
-                            <h2>Datos del cliente</h2>
+                            <span data-i18n="checkout.step3.label">Step 3</span>
+                            <h2 data-i18n="checkout.step3.title">Customer details</h2>
                         </div>
                     </div>
                     <!-- [html-validate-disable-next wcag/h32 -- asistente multipaso: la navegacion la gobierna checkout.js con data-next-step, no un submit] -->
                     <form class="checkout-form" id="customer-form" novalidate>
                         <div class="checkout-field">
-                            <label for="customer-name">Nombre completo</label>
-                            <input type="text" id="customer-name" name="customerName" placeholder="Nombre y apellido">
+                            <label for="customer-name" data-i18n="checkout.customer.name">Full name</label>
+                            <input type="text" id="customer-name" name="customerName" placeholder="First and last name" data-i18n-attr="placeholder:checkout.customer.namePlaceholder">
                             <small data-error-for="customerName"></small>
                         </div>
                         <div class="checkout-field">
-                            <label for="customer-email">Correo electronico</label>
-                            <input type="email" id="customer-email" name="customerEmail" placeholder="correo@ejemplo.com">
+                            <label for="customer-email" data-i18n="checkout.customer.email">Email</label>
+                            <input type="email" id="customer-email" name="customerEmail" placeholder="name@example.com" data-i18n-attr="placeholder:checkout.emailPlaceholder">
                             <small data-error-for="customerEmail"></small>
                         </div>
                         <div class="checkout-field">
-                            <label for="customer-phone">Telefono</label>
+                            <label for="customer-phone" data-i18n="checkout.customer.phone">Phone</label>
                             <input type="tel" id="customer-phone" name="customerPhone" placeholder="987654321">
                             <small data-error-for="customerPhone"></small>
                         </div>
                         <div class="checkout-field">
-                            <label for="customer-type-label">Tipo de cliente</label>
-                            <input type="text" id="customer-type-label" name="customerTypeLabel" value="Hogar" readonly>
+                            <label for="customer-type-label" data-i18n="checkout.customer.type">Customer type</label>
+                            <input type="text" id="customer-type-label" name="customerTypeLabel" value="Home" readonly data-i18n-attr="value:checkout.segmentHome">
                             <input type="hidden" id="customer-type" name="customerType" value="home">
                             <small data-error-for="customerType"></small>
                         </div>
                         <div class="checkout-field full-width">
-                            <label for="installation-address">Direccion de instalacion</label>
-                            <input type="text" id="installation-address" name="installationAddress" placeholder="Direccion donde se instalara el sensor">
+                            <label for="installation-address" data-i18n="checkout.customer.address">Installation address</label>
+                            <input type="text" id="installation-address" name="installationAddress" placeholder="Address where the sensor will be installed" data-i18n-attr="placeholder:checkout.customer.addressPlaceholder">
                             <small data-error-for="installationAddress"></small>
                         </div>
                     </form>
                     <div class="checkout-actions">
-                        <button type="button" class="secondary-button" data-prev-step>Anterior</button>
-                        <button type="button" class="cta-button" data-next-step>Continuar al pago</button>
+                        <button type="button" class="secondary-button" data-prev-step data-i18n="checkout.previous">Previous</button>
+                        <button type="button" class="cta-button" data-next-step data-i18n="checkout.step3.next">Continue to payment</button>
                     </div>
                 </section>
 
                 <section class="checkout-panel" data-step="4">
                     <div class="checkout-panel-header">
                         <div>
-                            <span>Paso 4</span>
-                            <h2>Completar pago</h2>
+                            <span data-i18n="checkout.step4.label">Step 4</span>
+                            <h2 data-i18n="checkout.step4.title">Complete payment</h2>
                         </div>
                         <p class="checkout-note">EMSAFE</p>
                     </div>
                     <!-- [html-validate-disable-next wcag/h32 -- asistente multipaso: la navegacion la gobierna checkout.js con data-next-step, no un submit] -->
                     <form class="checkout-form" id="payment-form" novalidate>
                         <div class="checkout-field">
-                            <label for="card-holder">Nombre del titular</label>
-                            <input type="text" id="card-holder" name="cardHolder" autocomplete="cc-name" placeholder="Nombre como aparece en la tarjeta">
+                            <label for="card-holder" data-i18n="checkout.payment.holder">Cardholder name</label>
+                            <input type="text" id="card-holder" name="cardHolder" autocomplete="cc-name" placeholder="Name as it appears on the card" data-i18n-attr="placeholder:checkout.payment.holderPlaceholder">
                             <small data-error-for="cardHolder"></small>
                         </div>
                         <div class="checkout-field">
-                            <label for="card-number">Numero de tarjeta</label>
+                            <label for="card-number" data-i18n="checkout.payment.number">Card number</label>
                             <input type="text" id="card-number" name="cardNumber" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000" maxlength="19">
                             <small data-error-for="cardNumber"></small>
                         </div>
                         <div class="checkout-field">
-                            <label for="card-expiry">Fecha de expiracion</label>
-                            <input type="text" id="card-expiry" name="cardExpiry" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA" maxlength="5">
+                            <label for="card-expiry" data-i18n="checkout.payment.expiry">Expiration date</label>
+                            <input type="text" id="card-expiry" name="cardExpiry" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5" data-i18n-attr="placeholder:checkout.payment.expiryPlaceholder">
                             <small data-error-for="cardExpiry"></small>
                         </div>
                         <div class="checkout-field">
@@ -192,15 +199,15 @@
                             <small data-error-for="cardCvv"></small>
                         </div>
                         <div class="checkout-field full-width">
-                            <label for="billing-email">Correo de facturacion</label>
-                            <input type="email" id="billing-email" name="billingEmail" autocomplete="email" placeholder="correo@ejemplo.com">
+                            <label for="billing-email" data-i18n="checkout.payment.billingEmail">Billing email</label>
+                            <input type="email" id="billing-email" name="billingEmail" autocomplete="email" placeholder="name@example.com" data-i18n-attr="placeholder:checkout.emailPlaceholder">
                             <small data-error-for="billingEmail"></small>
                         </div>
                     </form>
                     <div class="checkout-actions">
-                        <button type="button" class="secondary-button" data-prev-step>Anterior</button>
+                        <button type="button" class="secondary-button" data-prev-step data-i18n="checkout.previous">Previous</button>
                         <button type="button" class="cta-button checkout-pay-button" data-pay-now>
-                            <span>Pagar ahora</span>
+                            <span data-pay-label>Pay now</span>
                         </button>
                     </div>
                 </section>
@@ -210,18 +217,19 @@
                         <div class="confirmation-icon">
                             <i class="fas fa-check"></i>
                         </div>
-                        <h2>Pago exitoso</h2>
-                        <p class="confirmation-plan" data-confirmation-plan>Plan EMSafe</p>
-                        <p class="confirmation-price" data-confirmation-price>S/ 14,90/mes</p>
-                        <p>Enviaremos a <strong data-confirmation-email>tu correo</strong> un codigo de confirmacion y las credenciales para registrar tu cuenta en la app EMSafe.</p>
-                        <p>Con estas credenciales podras ingresar a la plataforma y completar la configuracion de tu sensor.</p>
-                        <a href="index.html" class="cta-button">Volver a la landing</a>
+                        <h2 data-i18n="checkout.confirmation.title">Payment successful</h2>
+                        <p class="confirmation-plan" data-confirmation-plan>Premium</p>
+                        <p class="confirmation-price" data-confirmation-price>S/ 14.90/month</p>
+                        <p data-confirmation-message></p>
+                        <p data-i18n="checkout.confirmation.next">With these credentials, you can sign in to the platform and finish setting up your sensor.</p>
+                        <a href="index.html" class="cta-button" data-i18n="checkout.confirmation.home">Back to the home page</a>
                     </article>
                 </section>
             </div>
         </section>
     </main>
 
+    <script src="./scripts/i18n.js"></script>
     <script src="./scripts/checkout.js"></script>
 </body>
 </html>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMSafe - Control de niveles electromagnéticos</title>
+    <title data-i18n="meta.index.title">EMSafe | Continuous electromagnetic field monitoring</title>
+    <meta name="description" content="EMSafe continuously monitors non-ionizing electromagnetic fields, with personal dosimeters for industrial workers and fixed sensors for the home." data-i18n-attr="content:meta.index.description">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -21,12 +22,18 @@
                 <i class="fas fa-bars"></i>
             </label>
             <ul class="nav-links">
-                <li><a href="#features">Características</a></li>
-                <li><a href="#plans">Planes</a></li>
-                <li><a href="#about">Acerca de</a></li>
-                <li><a href="#problem">Problemática</a></li>
-                <li><a href="#contact">Contacto</a></li>
-                <li><a href="https://jolly-coast-0c1ffd00f.8.azurestaticapps.net/" class="cta-button">Iniciar Sesión</a></li>
+                <li><a href="#features" data-i18n="nav.features">Features</a></li>
+                <li><a href="#plans" data-i18n="nav.plans">Plans</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#problem" data-i18n="nav.problem">The problem</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                <li>
+                    <div class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:nav.language">
+                        <button type="button" class="lang-option" data-lang="en" lang="en" aria-label="English" aria-pressed="true">EN</button>
+                        <button type="button" class="lang-option" data-lang="es" lang="es" aria-label="Español" aria-pressed="false">ES</button>
+                    </div>
+                </li>
+                <li><a href="https://jolly-coast-0c1ffd00f.8.azurestaticapps.net/" class="cta-button" data-i18n="nav.signIn">Sign in</a></li>
             </ul>
         </nav>
     </header>
@@ -35,40 +42,40 @@
         <section id="hero">
             <div class="container hero-content">
                 <div class="hero-text">
-                    <h1>Monitoreo continuo de campos electromagnéticos no ionizantes</h1>
-                    <p>EMSafe combina dispositivos IoT, servicios en la nube, una aplicación móvil y un portal web para medir de forma continua la exposición de cada operario en plantas industriales y los niveles de cada ambiente en el hogar.</p>
-                    <a href="#contact" class="cta-button">Solicitar demo</a>
+                    <h1 data-i18n="hero.title">Continuous monitoring of non-ionizing electromagnetic fields</h1>
+                    <p data-i18n="hero.text">EMSafe brings together IoT devices, cloud services, a mobile app, and a web portal to continuously measure each worker's exposure in industrial plants and the levels in every room at home.</p>
+                    <a href="#contact" class="cta-button" data-i18n="hero.cta">Request a demo</a>
                 </div>
                 <div class="hero-image">
-                    <img src="./imgs/hero.webp" alt="Dashboard de EMSafe">
+                    <img src="./imgs/hero.webp" alt="EMSafe dashboard" data-i18n-attr="alt:hero.imageAlt">
                 </div>
             </div>
         </section>
 
         <section id="features">
             <div class="container">
-                <h2 class="section-title">Características principales</h2>
+                <h2 class="section-title" data-i18n="features.title">Key features</h2>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-user-shield"></i>
                         </div>
-                        <h3>Dosímetro personal</h3>
-                        <p>En plantas de fundición y metalmecánica, cada operario lleva un dosímetro que mide su exposición durante la jornada y emite una alerta local de luz y sonido al superar el umbral de su puesto.</p>
+                        <h3 data-i18n="features.dosimeter.title">Personal dosimeter</h3>
+                        <p data-i18n="features.dosimeter.text">In foundries and metalworking plants, each worker wears a dosimeter that measures their exposure throughout the shift and triggers a local light and sound alert when the threshold for their position is exceeded.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-house-signal"></i>
                         </div>
-                        <h3>Sensor fijo para el hogar</h3>
-                        <p>Mide los niveles electromagnéticos de cada ambiente y los muestra en la app con su historial. Ante un nivel de riesgo, envía una alerta y permite cortar el enchufe inteligente desde la app.</p>
+                        <h3 data-i18n="features.homeSensor.title">Fixed home sensor</h3>
+                        <p data-i18n="features.homeSensor.text">Measures electromagnetic levels in every room and displays them in the app along with their history. When a risk level is reached, it sends an alert and lets you switch off the smart plug from the app.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-sliders-h"></i>
                         </div>
-                        <h3>Portal del responsable SSO</h3>
-                        <p>El responsable de seguridad y salud en el trabajo define los umbrales por puesto desde el portal web. Cada cambio llega al dosímetro y queda auditado.</p>
+                        <h3 data-i18n="features.portal.title">OHS manager portal</h3>
+                        <p data-i18n="features.portal.text">The occupational health and safety (OHS) manager sets thresholds for each position from the web portal. Every change is delivered to the dosimeter and recorded in an audit trail.</p>
                     </div>
                 </div>
             </div>
@@ -76,15 +83,15 @@
 
         <section id="benefits">
             <div class="container">
-                <h2 class="section-title">Beneficios</h2>
+                <h2 class="section-title" data-i18n="benefits.title">Benefits</h2>
                 <div class="benefits-grid">
                     <div class="benefit-item">
                         <div class="benefit-icon">
                             <i class="fas fa-user-clock"></i>
                         </div>
                         <div class="benefit-text">
-                            <h3>Exposición medida en la persona</h3>
-                            <p>La app muestra a cada operario su exposición acumulada de la jornada frente al límite de su puesto.</p>
+                            <h3 data-i18n="benefits.personal.title">Exposure measured on the person</h3>
+                            <p data-i18n="benefits.personal.text">The app shows each worker their accumulated exposure for the shift against the limit for their position.</p>
                         </div>
                     </div>
                     <div class="benefit-item">
@@ -92,8 +99,8 @@
                             <i class="fas fa-clipboard-check"></i>
                         </div>
                         <div class="benefit-text">
-                            <h3>Evidencia para fiscalizaciones</h3>
-                            <p>Las alertas y los cambios de umbral quedan registrados y trazables como respaldo ante una fiscalización.</p>
+                            <h3 data-i18n="benefits.evidence.title">Evidence for inspections</h3>
+                            <p data-i18n="benefits.evidence.text">Alerts and threshold changes are logged and traceable, providing a record for regulatory inspections.</p>
                         </div>
                     </div>
                     <div class="benefit-item">
@@ -101,8 +108,8 @@
                             <i class="fas fa-cloud-upload-alt"></i>
                         </div>
                         <div class="benefit-text">
-                            <h3>Sin pérdida de lecturas</h3>
-                            <p>Si se pierde la conexión, el dosímetro guarda las lecturas y las sincroniza al reconectarse.</p>
+                            <h3 data-i18n="benefits.offline.title">No lost readings</h3>
+                            <p data-i18n="benefits.offline.text">If the connection drops, the dosimeter stores readings locally and syncs them once it reconnects.</p>
                         </div>
                     </div>
                     <div class="benefit-item">
@@ -110,8 +117,8 @@
                             <i class="fas fa-plug"></i>
                         </div>
                         <div class="benefit-text">
-                            <h3>Control desde la app en el hogar</h3>
-                            <p>Consulta los niveles de cada ambiente y corta el enchufe inteligente cuando se alcanza un nivel de riesgo.</p>
+                            <h3 data-i18n="benefits.home.title">Control from the app at home</h3>
+                            <p data-i18n="benefits.home.text">Check the levels in each room and switch off the smart plug when a risk level is reached.</p>
                         </div>
                     </div>
                 </div>
@@ -120,57 +127,57 @@
 
         <section id="plans">
             <div class="container">
-                <h2 class="section-title">Planes para el hogar y la empresa</h2>
-                <p class="section-description">Elige el plan según tu segmento: monitoreo de ambientes en el hogar o monitoreo de la exposición de los trabajadores en planta.</p>
+                <h2 class="section-title" data-i18n="plans.title">Plans for homes and businesses</h2>
+                <p class="section-description" data-i18n="plans.description">Choose the plan for your segment: room-by-room monitoring at home, or worker exposure monitoring on the plant floor.</p>
                 <div class="subscription-grid">
                     <div class="subscription-card">
                         <div class="subscription-icon">
                             <i class="fas fa-house-user"></i>
                         </div>
                         <h3>Free</h3>
-                        <p class="subscription-audience">Para empezar a monitorear tu hogar.</p>
-                        <p class="subscription-price">Gratis</p>
+                        <p class="subscription-audience" data-i18n="plans.free.audience">To start monitoring your home.</p>
+                        <p class="subscription-price" data-i18n-html="plans.free.price">S/ 0 <span>/month</span></p>
                         <ul class="subscription-features">
-                            <li><i class="fas fa-check"></i> App móvil EMSafe</li>
-                            <li><i class="fas fa-check"></i> Monitoreo básico</li>
-                            <li><i class="fas fa-check"></i> Alertas de umbral</li>
-                            <li><i class="fas fa-check"></i> Historial de 7 días</li>
-                            <li><i class="fas fa-check"></i> 1 dispositivo</li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.free.f1">EMSafe mobile app</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.free.f2">Basic monitoring</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.free.f3">Threshold alerts</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.free.f4">7-day history</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.free.f5">1 device</span></li>
                         </ul>
-                        <a href="https://jolly-coast-0c1ffd00f.8.azurestaticapps.net/" class="cta-button">Crear cuenta</a>
+                        <a href="https://jolly-coast-0c1ffd00f.8.azurestaticapps.net/" class="cta-button" data-i18n="plans.free.cta">Create account</a>
                     </div>
                     <div class="subscription-card">
                         <div class="subscription-icon">
                             <i class="fas fa-home"></i>
                         </div>
                         <h3>Premium</h3>
-                        <p class="subscription-audience">Para un seguimiento completo de tu hogar.</p>
-                        <p class="subscription-price">S/ 14,90 <span>/mes</span></p>
+                        <p class="subscription-audience" data-i18n="plans.premium.audience">For complete monitoring of your home.</p>
+                        <p class="subscription-price" data-i18n-html="plans.premium.price">S/ 14.90 <span>/month</span></p>
                         <ul class="subscription-features">
-                            <li><i class="fas fa-check"></i> Incluye todo lo del plan Free</li>
-                            <li><i class="fas fa-check"></i> Historial ilimitado</li>
-                            <li><i class="fas fa-check"></i> Recomendaciones personalizadas</li>
-                            <li><i class="fas fa-check"></i> Reportes descargables</li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.premium.f1">Everything in the Free plan</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.premium.f2">Unlimited history</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.premium.f3">Personalized recommendations</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.premium.f4">Downloadable reports</span></li>
                         </ul>
-                        <a href="checkout.html?type=premium" class="cta-button">Suscribirme</a>
+                        <a href="checkout.html?type=premium" class="cta-button" data-i18n="plans.premium.cta">Subscribe</a>
                     </div>
                     <div class="subscription-card featured-plan">
-                        <div class="plan-badge">Empresas</div>
+                        <div class="plan-badge" data-i18n="plans.business.badge">For businesses</div>
                         <div class="subscription-icon">
                             <i class="fas fa-industry"></i>
                         </div>
                         <h3>Business</h3>
-                        <p class="subscription-audience">Para plantas de fundición y metalmecánica.</p>
-                        <p class="subscription-price">S/ 29 <span>/mes por dispositivo</span></p>
-                        <p class="subscription-coverage">Por cada dispositivo IoT activo en campo (dosímetro o nodo Edge).</p>
+                        <p class="subscription-audience" data-i18n="plans.business.audience">For foundries and metalworking plants.</p>
+                        <p class="subscription-price" data-i18n-html="plans.business.price">S/ 29 <span>/month per device</span></p>
+                        <p class="subscription-coverage" data-i18n="plans.business.coverage">Per active IoT device in the field (dosimeter or Edge node).</p>
                         <ul class="subscription-features">
-                            <li><i class="fas fa-check"></i> Portal del responsable SSO por área y trabajador</li>
-                            <li><i class="fas fa-check"></i> Exposición acumulada por trabajador</li>
-                            <li><i class="fas fa-check"></i> Alertas preventivas</li>
-                            <li><i class="fas fa-check"></i> Evidencia trazable para fiscalización</li>
-                            <li><i class="fas fa-check"></i> Reportes de cumplimiento</li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.business.f1">OHS manager portal by area and worker</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.business.f2">Accumulated exposure per worker</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.business.f3">Preventive alerts</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.business.f4">Traceable evidence for inspections</span></li>
+                            <li><i class="fas fa-check"></i> <span data-i18n="plans.business.f5">Compliance reports</span></li>
                         </ul>
-                        <a href="#contact" class="cta-button">Solicitar cotización</a>
+                        <a href="#contact" class="cta-button" data-i18n="plans.business.cta">Request a quote</a>
                     </div>
                 </div>
             </div>
@@ -178,7 +185,7 @@
 
         <section id="about">
             <div class="container">
-                <h2 class="section-title">Acerca de EMSafe</h2>
+                <h2 class="section-title" data-i18n="about.title">About EMSafe</h2>
                 <div class="about-content">
                     <div class="about-section">
                         <div class="about-text-content">
@@ -187,9 +194,9 @@
                                     <i class="fas fa-microchip"></i>
                                 </div>
                                 <div class="benefit-text">
-                                    <h3>Acerca del producto</h3>
+                                    <h3 data-i18n="about.product.title">About the product</h3>
                                     <br>
-                                    <p>EMSafe es una plataforma de monitoreo continuo de campos electromagnéticos no ionizantes que integra dispositivos IoT, servicios en la nube, una aplicación móvil y un portal web. En plantas de fundición y metalmecánica, cada operario lleva un dosímetro personal y el responsable de seguridad y salud en el trabajo (SSO) gestiona los umbrales y la evidencia desde el portal web. En el hogar, un sensor fijo registra los niveles de cada ambiente y la app permite cortar un enchufe inteligente ante un nivel de riesgo.</p>
+                                    <p data-i18n="about.product.text">EMSafe is a platform for continuous monitoring of non-ionizing electromagnetic fields that brings together IoT devices, cloud services, a mobile app, and a web portal. In foundries and metalworking plants, each worker wears a personal dosimeter, and the occupational health and safety (OHS) manager handles thresholds and evidence from the web portal. At home, a fixed sensor records the levels in each room, and the app can switch off a smart plug when a risk level is reached.</p>
                                 </div>
                             </div>
                         </div>
@@ -202,19 +209,19 @@
                                     <i class="fas fa-users"></i>
                                 </div>
                                 <div class="benefit-text">
-                                    <h3>Acerca del equipo</h3>
+                                    <h3 data-i18n="about.team.title">About the team</h3>
                                     <br>
-                                    <p>Somos un equipo que desarrolla soluciones IoT para medir de forma continua la exposición a campos electromagnéticos no ionizantes, con datos trazables para trabajadores, empresas y hogares.</p>
+                                    <p data-i18n="about.team.text">We are a team developing IoT solutions that continuously measure exposure to non-ionizing electromagnetic fields, with traceable data for workers, businesses, and households.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="about-video-container">
                             <div class="benefit-text">
-                                <h3>Conoce a nuestro equipo:</h3>
+                                <h3 data-i18n="about.team.videoHeading">Meet our team:</h3>
                                 <br>
                             </div>
                             <div class="video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/mdT-O5GrjyE" title="Video sobre EMSafe Team" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe src="https://www.youtube.com/embed/mdT-O5GrjyE" title="Video about the EMSafe team" data-i18n-attr="title:about.team.videoTitle" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -224,7 +231,7 @@
 
         <section id="problem">
             <div class="container">
-                <h2 class="section-title">La problemática</h2>
+                <h2 class="section-title" data-i18n="problem.title">The problem</h2>
                 <div class="problem-content">
                     <div class="problem-card">
                         <div class="benefit-item">
@@ -232,9 +239,9 @@
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
                             <div class="benefit-text">
-                                <h3>Se mide el ambiente, no a la persona</h3>
+                                <h3 data-i18n="problem.heading">The environment is measured, not the person</h3>
                                 <br>
-                                <p>Hoy la exposición a campos electromagnéticos no ionizantes suele evaluarse con campañas de medición puntuales, que registran el nivel del ambiente en un momento dado. Sin embargo, el campo decae con la distancia a la fuente: dos personas en la misma área pueden tener exposiciones muy distintas según dónde trabajan y cuánto tiempo permanecen cerca de los equipos. Sin un registro continuo e individual, no es posible conocer la exposición real de cada trabajador ni demostrarla ante una fiscalización.</p>
+                                <p data-i18n="problem.text">Today, exposure to non-ionizing electromagnetic fields is usually assessed through one-off measurement campaigns that capture the level in an area at a single point in time. However, the field weakens with distance from the source: two people in the same area can have very different exposures depending on where they work and how long they stay near the equipment. Without continuous, individual records, it is not possible to know each worker's actual exposure or to demonstrate it during an inspection.</p>
                             </div>
                         </div>
                     </div>
@@ -244,7 +251,7 @@
 
         <section id="testimonials" hidden>
             <div class="container">
-                <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+                <h2 class="section-title" data-i18n="testimonials.title">What our customers say</h2>
                 <div class="testimonial-slider"></div>
                 <div class="testimonial-nav"></div>
             </div>
@@ -252,26 +259,26 @@
 
         <section id="contact">
             <div class="container">
-                <h2 class="section-title">¿Quieres conocer EMSafe?</h2>
-                <h3 class="contact-subtitle">Solicita una demostración o una cotización, o escríbenos a contacto@emsafe.com.</h3>
+                <h2 class="section-title" data-i18n="contact.title">Interested in EMSafe?</h2>
+                <h3 class="contact-subtitle" data-i18n="contact.subtitle">Request a demo or a quote, or write to us at contacto@emsafe.com.</h3>
                 <form class="contact-form">
                     <div class="form-group">
-                        <label for="name">Nombre</label>
+                        <label for="name" data-i18n="contact.name">Name</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Correo electrónico</label>
+                        <label for="email" data-i18n="contact.email">Email</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Teléfono</label>
+                        <label for="phone" data-i18n="contact.phone">Phone</label>
                         <input type="tel" id="phone" name="phone">
                     </div>
                     <div class="form-group">
-                        <label for="message">Mensaje</label>
+                        <label for="message" data-i18n="contact.message">Message</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
-                    <button type="submit" class="cta-button">Enviar</button>
+                    <button type="submit" class="cta-button" data-i18n="contact.submit">Send</button>
                 </form>
             </div>
         </section>
@@ -285,22 +292,22 @@
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h4>Navegación</h4>
+                        <h4 data-i18n="footer.navigation">Navigation</h4>
                         <ul>
-                            <li><a href="#benefits">Beneficios</a></li>
-                            <li><a href="#plans">Planes</a></li>
-                            <li><a href="#about">Acerca de</a></li>
-                            <li><a href="#problem">Problemática</a></li>
+                            <li><a href="#benefits" data-i18n="footer.benefits">Benefits</a></li>
+                            <li><a href="#plans" data-i18n="nav.plans">Plans</a></li>
+                            <li><a href="#about" data-i18n="nav.about">About</a></li>
+                            <li><a href="#problem" data-i18n="nav.problem">The problem</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h4>Contacto</h4>
+                        <h4 data-i18n="nav.contact">Contact</h4>
                         <ul>
                             <li><i class="fas fa-envelope"></i> contacto@emsafe.com</li>
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h4>Síguenos</h4>
+                        <h4 data-i18n="footer.follow">Follow us</h4>
                         <div class="social-icons">
                             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -311,14 +318,15 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 EMSafe. Todos los derechos reservados.</p>
+                <p data-i18n="footer.copyright">© 2026 EMSafe. All rights reserved.</p>
                 <div class="footer-legal">
-                    <a href="#">Política de Privacidad</a>
-                    <a href="#">Términos y Condiciones</a>
+                    <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="#" data-i18n="footer.terms">Terms and Conditions</a>
                 </div>
             </div>
         </footer>
 
+    <script src="./scripts/i18n.js"></script>
     <script src="./scripts/main-scripts.js"></script>
 </body>
 </html>
