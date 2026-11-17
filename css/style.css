@@ -509,6 +509,12 @@ nav {
     margin-top: 20px;
 }
 
+/* Sin video, el texto ocupa todo el ancho. Vuelve a 2 columnas solo al
+   agregar el bloque de video, sin tocar el HTML. */
+.problem-content:not(:has(.problem-video-container)) {
+    grid-template-columns: 1fr;
+}
+
 .problem-card {
     display: flex;
     flex-direction: column;
@@ -1175,6 +1181,12 @@ footer {
     .problem-content {
         grid-template-columns: 1fr;
     }
+
+    /* En tablet las 3 columnas parten el precio: se apilan centradas */
+    .subscription-grid {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1428,6 +1440,10 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     align-items: start;
+}
+
+.about-section:not(:has(.about-video-container)) {
+    grid-template-columns: 1fr;
 }
 
 .about-text-content {
@@ -1714,7 +1730,8 @@ footer {
 
 .range-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 420px);
+    justify-content: center;
     gap: 18px;
 }
 
@@ -2039,10 +2056,6 @@ footer {
         grid-template-columns: repeat(5, minmax(120px, 1fr));
         overflow-x: auto;
         padding-bottom: 4px;
-    }
-
-    .range-grid {
-        grid-template-columns: 1fr;
     }
 }
 
