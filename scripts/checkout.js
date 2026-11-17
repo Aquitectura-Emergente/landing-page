@@ -1,62 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const plans = {
-        home: [
-            {
-                id: 'home-basic',
-                name: 'Hogar Basico',
-                range: '0 a 10 sensores',
-                price: 1190,
-                description: 'Ideal para hogares pequenos, departamentos o espacios familiares compactos.',
-                benefits: ['Acceso completo a la plataforma', 'Alertas e historial incluidos', 'Cobertura para zonas principales']
-            },
-            {
-                id: 'home-intermediate',
-                name: 'Hogar Intermedio',
-                range: '10 a 20 sensores',
-                price: 1990,
-                description: 'Pensado para casas medianas con varias habitaciones y areas de trabajo.',
-                benefits: ['Monitoreo por ambientes', 'Mayor cobertura interior', 'Recomendado para familias activas']
-            },
-            {
-                id: 'home-advanced',
-                name: 'Hogar Avanzado',
-                range: '20 a 30 sensores',
-                price: 2790,
-                description: 'Cobertura amplia para viviendas grandes o espacios con varios dispositivos.',
-                benefits: ['Cobertura extendida', 'Seguimiento por zonas', 'Ideal para hogares con oficina o estudio']
-            }
-        ],
-        business: [
-            {
-                id: 'business-initial',
-                name: 'Empresa Inicial',
-                range: '30 a 100 sensores',
-                price: 4890,
-                description: 'Ideal para oficinas pequenas, consultorios o locales comerciales.',
-                benefits: ['Cobertura por areas', 'Gestion desde plataforma', 'Preparado para espacios de atencion']
-            },
-            {
-                id: 'business-professional',
-                name: 'Empresa Profesional',
-                range: '100 a 200 sensores',
-                price: 7990,
-                description: 'Para empresas con multiples ambientes, mayor flujo de personas y monitoreo constante.',
-                benefits: ['Cobertura multiambiente', 'Escalabilidad operativa', 'Recomendado para sedes medianas']
-            },
-            {
-                id: 'business-corporate',
-                name: 'Empresa Corporativa',
-                range: '200 sensores a mas',
-                price: 9990,
-                description: 'Para organizaciones con sedes amplias, instituciones o instalaciones de alta demanda.',
-                benefits: ['Cobertura corporativa', 'Plan preparado para crecimiento', 'Ideal para sedes grandes']
-            }
-        ]
-    };
+    // Solo Premium pasa por el checkout: Free se activa creando la cuenta y
+    // Business se cotiza desde el formulario de contacto de la landing.
+    const plans = [
+        {
+            id: 'premium',
+            name: 'Premium',
+            segment: 'Hogar',
+            price: '14,90',
+            description: 'Seguimiento completo de los niveles electromagnéticos de tu hogar.',
+            benefits: ['Incluye todo lo del plan Free', 'Historial ilimitado', 'Recomendaciones personalizadas', 'Reportes descargables']
+        }
+    ];
 
     const state = {
-        planType: new URLSearchParams(window.location.search).get('type') === 'business' ? 'business' : 'home',
-        selectedPlanId: null,
+        selectedPlanId: plans[0].id,
         step: 1,
         customer: {},
         billingEmail: ''
@@ -65,13 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const planOptions = document.querySelector('[data-plan-options]');
     const stepPanels = document.querySelectorAll('[data-step]');
     const stepButtons = document.querySelectorAll('[data-step-button]');
-    const typeButtons = document.querySelectorAll('[data-plan-type]');
     const selectedTypeLabels = document.querySelectorAll('[data-selected-type]');
     const customerForm = document.getElementById('customer-form');
     const paymentForm = document.getElementById('payment-form');
-    const customerTypeInput = document.getElementById('customer-type');
-    const customerTypeLabel = document.getElementById('customer-type-label');
-    const businessFields = document.querySelector('[data-business-fields]');
     const payButton = document.querySelector('[data-pay-now]');
     const checkoutFlow = document.querySelector('.checkout-flow');
 
@@ -79,26 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return `S/ ${plan.price}/mes`;
     }
 
-    function planTypeLabel(type = state.planType) {
-        return type === 'business' ? 'Empresa' : 'Hogar';
-    }
-
-    function getCurrentPlanList() {
-        return plans[state.planType];
-    }
-
     function getSelectedPlan() {
-        return getCurrentPlanList().find(plan => plan.id === state.selectedPlanId) || getCurrentPlanList()[0];
-    }
-
-    function selectPlanType(type) {
-        state.planType = type;
-        state.selectedPlanId = plans[type][0].id;
-        if (customerTypeInput) customerTypeInput.value = type;
-        if (customerTypeLabel) customerTypeLabel.value = planTypeLabel(type);
-        renderPlanOptions();
-        updateCartSummary();
-        updateTypeFields();
+        return plans.find(plan => plan.id === state.selectedPlanId) || plans[0];
     }
 
     function selectPlanRange(planId) {
@@ -112,8 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const benefits = plan.benefits.map(item => `<li><i class="fas fa-check"></i>${item}</li>`).join('');
         setText('[data-cart-name]', plan.name);
         setText('[data-cart-description]', plan.description);
-        setText('[data-cart-type]', planTypeLabel());
-        setText('[data-cart-range]', plan.range);
+        setText('[data-cart-type]', plan.name);
+        setText('[data-cart-range]', plan.segment);
         setText('[data-cart-price]', formatPrice(plan));
         setText('[data-cart-total]', formatPrice(plan));
         setText('[data-confirmation-plan]', plan.name);
@@ -129,17 +64,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function renderPlanOptions() {
         selectedTypeLabels.forEach(label => {
-            label.textContent = planTypeLabel();
+            label.textContent = getSelectedPlan().name;
         });
 
-        typeButtons.forEach(button => {
-            button.classList.toggle('active', button.dataset.planType === state.planType);
-        });
-
-        planOptions.innerHTML = getCurrentPlanList().map(plan => `
+        planOptions.innerHTML = plans.map(plan => `
             <article class="range-card ${plan.id === state.selectedPlanId ? 'selected' : ''}" data-plan-id="${plan.id}" tabindex="0">
                 <h3>${plan.name}</h3>
-                <p class="range">${plan.range}</p>
+                <p class="range">${plan.segment}</p>
                 <div class="price">${formatPrice(plan).replace('/mes', '<span>/mes</span>')}</div>
                 <p>${plan.description}</p>
                 <ul>
@@ -199,8 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
             customerEmail: customerForm.elements.customerEmail.value.trim(),
             customerPhone: customerForm.elements.customerPhone.value.trim(),
             customerType: customerForm.elements.customerType.value,
-            companyName: customerForm.elements.companyName.value.trim(),
-            companyRuc: customerForm.elements.companyRuc.value.replace(/\D/g, ''),
             installationAddress: customerForm.elements.installationAddress.value.trim()
         };
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -221,16 +150,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!values.installationAddress) {
             setFormError(customerForm, 'installationAddress', 'Ingresa la direccion de instalacion.');
             valid = false;
-        }
-        if (values.customerType === 'business') {
-            if (!values.companyName) {
-                setFormError(customerForm, 'companyName', 'Ingresa el nombre de empresa.');
-                valid = false;
-            }
-            if (values.companyRuc.length !== 11) {
-                setFormError(customerForm, 'companyRuc', 'Ingresa un RUC de 11 digitos.');
-                valid = false;
-            }
         }
 
         if (valid) {
@@ -310,17 +229,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'index.html';
     }
 
-    function updateTypeFields() {
-        customerTypeInput.value = state.planType;
-        if (customerTypeLabel) customerTypeLabel.value = planTypeLabel();
-        const isBusiness = state.planType === 'business';
-        businessFields.classList.toggle('is-visible', isBusiness);
-    }
-
-    typeButtons.forEach(button => {
-        button.addEventListener('click', () => selectPlanType(button.dataset.planType));
-    });
-
     document.querySelectorAll('[data-next-step]').forEach(button => {
         button.addEventListener('click', () => goToCheckoutStep(state.step + 1));
     });
@@ -343,15 +251,11 @@ document.addEventListener('DOMContentLoaded', function() {
         event.target.value = event.target.value.replace(/\D/g, '').slice(0, 4);
     });
 
-    customerForm.elements.companyRuc.addEventListener('input', function(event) {
-        event.target.value = event.target.value.replace(/\D/g, '').slice(0, 11);
-    });
-
     payButton.addEventListener('click', simulatePayment);
 
     window.returnToLanding = returnToLanding;
 
-    selectPlanType(state.planType);
+    renderPlanOptions();
     updateCartSummary();
     goToCheckoutStep(1);
 });

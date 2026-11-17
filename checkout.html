@@ -29,11 +29,11 @@
                 <div>
                     <span class="checkout-kicker">Suscripcion EMSafe</span>
                     <h1>Configura tu plan de monitoreo</h1>
-                    <p>Elige la cobertura ideal, revisa tu pedido y completa los datos necesarios para activar tu acceso a la plataforma.</p>
+                    <p>Revisa tu plan, completa tus datos y activa tu acceso a la app EMSafe.</p>
                 </div>
                 <div class="checkout-mini-summary">
                     <span>Plan seleccionado</span>
-                    <strong data-selected-type>Hogar</strong>
+                    <strong data-selected-type>Premium</strong>
                 </div>
             </div>
         </section>
@@ -42,7 +42,7 @@
             <aside class="checkout-steps" aria-label="Progreso del checkout">
                 <button class="checkout-step-button active" type="button" data-step-button="1">
                     <span>1</span>
-                    Rango
+                    Plan
                 </button>
                 <button class="checkout-step-button" type="button" data-step-button="2">
                     <span>2</span>
@@ -67,11 +67,7 @@
                     <div class="checkout-panel-header">
                         <div>
                             <span>Paso 1</span>
-                            <h2>Selecciona tu rango de cobertura</h2>
-                        </div>
-                        <div class="plan-type-switch" role="group" aria-label="Tipo de plan">
-                            <button type="button" data-plan-type="home">Hogar</button>
-                            <button type="button" data-plan-type="business">Empresa</button>
+                            <h2>Confirma tu plan</h2>
                         </div>
                     </div>
                     <div class="range-grid" data-plan-options></div>
@@ -100,20 +96,20 @@
                         <aside class="cart-summary-card" aria-label="Resumen del carrito">
                             <h3>Carrito</h3>
                             <div class="summary-line">
-                                <span>Tipo de plan</span>
-                                <strong data-cart-type>Hogar</strong>
+                                <span>Plan</span>
+                                <strong data-cart-type>Premium</strong>
                             </div>
                             <div class="summary-line">
-                                <span>Cobertura</span>
-                                <strong data-cart-range>0 a 10 sensores</strong>
+                                <span>Segmento</span>
+                                <strong data-cart-range>Hogar</strong>
                             </div>
                             <div class="summary-line">
                                 <span>Precio mensual</span>
-                                <strong data-cart-price>S/ 49/mes</strong>
+                                <strong data-cart-price>S/ 14,90/mes</strong>
                             </div>
                             <div class="summary-line total">
                                 <span>Total mensual</span>
-                                <strong data-cart-total>S/ 49/mes</strong>
+                                <strong data-cart-total>S/ 14,90/mes</strong>
                             </div>
                         </aside>
                     </div>
@@ -155,20 +151,8 @@
                         </div>
                         <div class="checkout-field full-width">
                             <label for="installation-address">Direccion de instalacion</label>
-                            <input type="text" id="installation-address" name="installationAddress" placeholder="Direccion donde se instalaran los sensores">
+                            <input type="text" id="installation-address" name="installationAddress" placeholder="Direccion donde se instalara el sensor">
                             <small data-error-for="installationAddress"></small>
-                        </div>
-                        <div class="business-extra-fields" data-business-fields>
-                            <div class="checkout-field">
-                                <label for="company-name">Nombre de empresa</label>
-                                <input type="text" id="company-name" name="companyName" placeholder="Razon social">
-                                <small data-error-for="companyName"></small>
-                            </div>
-                            <div class="checkout-field">
-                                <label for="company-ruc">RUC</label>
-                                <input type="text" id="company-ruc" name="companyRuc" inputmode="numeric" placeholder="20123456789" maxlength="11">
-                                <small data-error-for="companyRuc"></small>
-                            </div>
                         </div>
                     </form>
                     <div class="checkout-actions">
@@ -228,9 +212,9 @@
                         </div>
                         <h2>Pago exitoso</h2>
                         <p class="confirmation-plan" data-confirmation-plan>Plan EMSafe</p>
-                        <p class="confirmation-price" data-confirmation-price>S/ 49/mes</p>
+                        <p class="confirmation-price" data-confirmation-price>S/ 14,90/mes</p>
                         <p>Enviaremos a <strong data-confirmation-email>tu correo</strong> un codigo de confirmacion y las credenciales para registrar tu cuenta en la app EMSafe.</p>
-                        <p>Con estas credenciales podras ingresar a la plataforma y completar la configuracion de tus sensores.</p>
+                        <p>Con estas credenciales podras ingresar a la plataforma y completar la configuracion de tu sensor.</p>
                         <a href="index.html" class="cta-button">Volver a la landing</a>
                     </article>
                 </section>
