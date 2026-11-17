@@ -370,9 +370,9 @@ nav {
 
 .subscription-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
-    max-width: 950px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -507,6 +507,12 @@ nav {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin-top: 20px;
+}
+
+/* Sin video, el texto ocupa todo el ancho. Vuelve a 2 columnas solo al
+   agregar el bloque de video, sin tocar el HTML. */
+.problem-content:not(:has(.problem-video-container)) {
+    grid-template-columns: 1fr;
 }
 
 .problem-card {
@@ -1175,6 +1181,12 @@ footer {
     .problem-content {
         grid-template-columns: 1fr;
     }
+
+    /* En tablet las 3 columnas parten el precio: se apilan centradas */
+    .subscription-grid {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1428,6 +1440,10 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     align-items: start;
+}
+
+.about-section:not(:has(.about-video-container)) {
+    grid-template-columns: 1fr;
 }
 
 .about-text-content {
@@ -1714,7 +1730,8 @@ footer {
 
 .range-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 420px);
+    justify-content: center;
     gap: 18px;
 }
 
@@ -2040,10 +2057,6 @@ footer {
         overflow-x: auto;
         padding-bottom: 4px;
     }
-
-    .range-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 768px) {
@@ -2083,4 +2096,66 @@ footer {
     .confirmation-card {
         padding: 28px 20px;
     }
+}
+
+/* Selector de idioma EN / ES */
+.lang-switch {
+    display: inline-flex;
+    gap: 2px;
+    padding: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+}
+
+.lang-option {
+    background: transparent;
+    border: 0;
+    border-radius: 999px;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 6px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.lang-option:hover {
+    color: var(--accent);
+}
+
+.lang-option[aria-pressed="true"] {
+    background-color: white;
+    color: var(--primary);
+}
+
+.lang-option:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.lang-switch--light {
+    border-color: rgba(26, 35, 126, 0.2);
+}
+
+.lang-switch--light .lang-option {
+    color: var(--primary);
+}
+
+.lang-switch--light .lang-option[aria-pressed="true"] {
+    background-color: var(--primary);
+    color: white;
+}
+
+.checkout-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.login-lang {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
 }

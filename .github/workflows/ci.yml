@@ -46,3 +46,8 @@ jobs:
 
       - name: Comprobar que no hay enlaces ni assets rotos
         run: node tools/check-links.mjs
+
+      # en.json y es.json con las mismas claves, y ninguna clave usada en el
+      # HTML o en los scripts sin traducir.
+      - name: Comprobar las traducciones
+        run: node tools/check-i18n.mjs

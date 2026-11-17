@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "index": {
+      "title": "EMSafe | Monitoreo continuo de campos electromagnéticos",
+      "description": "EMSafe monitorea de forma continua los campos electromagnéticos no ionizantes, con dosímetros personales para operarios industriales y sensores fijos para el hogar."
+    },
+    "checkout": {
+      "title": "EMSafe | Checkout",
+      "description": "Suscríbete al plan Premium de EMSafe para monitorear de forma continua los niveles electromagnéticos de tu hogar."
+    },
+    "login": {
+      "title": "EMSafe | Iniciar sesión",
+      "description": "Inicia sesión en tu cuenta de EMSafe."
+    }
+  },
+  "nav": {
+    "features": "Características",
+    "plans": "Planes",
+    "about": "Acerca de",
+    "problem": "Problemática",
+    "contact": "Contacto",
+    "signIn": "Iniciar sesión",
+    "language": "Idioma"
+  },
+  "hero": {
+    "title": "Monitoreo continuo de campos electromagnéticos no ionizantes",
+    "text": "EMSafe combina dispositivos IoT, servicios en la nube, una aplicación móvil y un portal web para medir de forma continua la exposición de cada operario en plantas industriales y los niveles de cada ambiente en el hogar.",
+    "cta": "Solicitar demo",
+    "imageAlt": "Dashboard de EMSafe"
+  },
+  "features": {
+    "title": "Características principales",
+    "dosimeter": {
+      "title": "Dosímetro personal",
+      "text": "En plantas de fundición y metalmecánica, cada operario lleva un dosímetro que mide su exposición durante la jornada y emite una alerta local de luz y sonido al superar el umbral de su puesto."
+    },
+    "homeSensor": {
+      "title": "Sensor fijo para el hogar",
+      "text": "Mide los niveles electromagnéticos de cada ambiente y los muestra en la app con su historial. Ante un nivel de riesgo, envía una alerta y permite cortar el enchufe inteligente desde la app."
+    },
+    "portal": {
+      "title": "Portal del responsable SSO",
+      "text": "El responsable de seguridad y salud en el trabajo define los umbrales por puesto desde el portal web. Cada cambio llega al dosímetro y queda auditado."
+    }
+  },
+  "benefits": {
+    "title": "Beneficios",
+    "personal": {
+      "title": "Exposición medida en la persona",
+      "text": "La app muestra a cada operario su exposición acumulada de la jornada frente al límite de su puesto."
+    },
+    "evidence": {
+      "title": "Evidencia para fiscalizaciones",
+      "text": "Las alertas y los cambios de umbral quedan registrados y trazables como respaldo ante una fiscalización."
+    },
+    "offline": {
+      "title": "Sin pérdida de lecturas",
+      "text": "Si se pierde la conexión, el dosímetro guarda las lecturas y las sincroniza al reconectarse."
+    },
+    "home": {
+      "title": "Control desde la app en el hogar",
+      "text": "Consulta los niveles de cada ambiente y corta el enchufe inteligente cuando se alcanza un nivel de riesgo."
+    }
+  },
+  "plans": {
+    "title": "Planes para el hogar y la empresa",
+    "description": "Elige el plan según tu segmento: monitoreo de ambientes en el hogar o monitoreo de la exposición de los trabajadores en planta.",
+    "free": {
+      "audience": "Para empezar a monitorear tu hogar.",
+      "price": "Gratis",
+      "f1": "App móvil EMSafe",
+      "f2": "Monitoreo básico",
+      "f3": "Alertas de umbral",
+      "f4": "Historial de 7 días",
+      "f5": "1 dispositivo",
+      "cta": "Crear cuenta"
+    },
+    "premium": {
+      "audience": "Para un seguimiento completo de tu hogar.",
+      "price": "S/ 14,90 <span>/mes</span>",
+      "f1": "Incluye todo lo del plan Free",
+      "f2": "Historial ilimitado",
+      "f3": "Recomendaciones personalizadas",
+      "f4": "Reportes descargables",
+      "cta": "Suscribirme"
+    },
+    "business": {
+      "badge": "Empresas",
+      "audience": "Para plantas de fundición y metalmecánica.",
+      "price": "S/ 29 <span>/mes por dispositivo</span>",
+      "coverage": "Por cada dispositivo IoT activo en campo (dosímetro o nodo Edge).",
+      "f1": "Portal del responsable SSO por área y trabajador",
+      "f2": "Exposición acumulada por trabajador",
+      "f3": "Alertas preventivas",
+      "f4": "Evidencia trazable para fiscalización",
+      "f5": "Reportes de cumplimiento",
+      "cta": "Solicitar cotización"
+    }
+  },
+  "about": {
+    "title": "Acerca de EMSafe",
+    "product": {
+      "title": "Acerca del producto",
+      "text": "EMSafe es una plataforma de monitoreo continuo de campos electromagnéticos no ionizantes que integra dispositivos IoT, servicios en la nube, una aplicación móvil y un portal web. En plantas de fundición y metalmecánica, cada operario lleva un dosímetro personal y el responsable de seguridad y salud en el trabajo (SSO) gestiona los umbrales y la evidencia desde el portal web. En el hogar, un sensor fijo registra los niveles de cada ambiente y la app permite cortar un enchufe inteligente ante un nivel de riesgo.",
+      "videoHeading": "Conoce más sobre nuestro producto:",
+      "videoTitle": "Video sobre el producto EMSafe"
+    },
+    "team": {
+      "title": "Acerca del equipo",
+      "text": "Somos un equipo que desarrolla soluciones IoT para medir de forma continua la exposición a campos electromagnéticos no ionizantes, con datos trazables para trabajadores, empresas y hogares.",
+      "videoHeading": "Conoce a nuestro equipo:",
+      "videoTitle": "Video sobre el equipo de EMSafe"
+    }
+  },
+  "problem": {
+    "title": "La problemática",
+    "heading": "Se mide el ambiente, no a la persona",
+    "text": "Hoy la exposición a campos electromagnéticos no ionizantes suele evaluarse con campañas de medición puntuales, que registran el nivel del ambiente en un momento dado. Sin embargo, el campo decae con la distancia a la fuente: dos personas en la misma área pueden tener exposiciones muy distintas según dónde trabajan y cuánto tiempo permanecen cerca de los equipos. Sin un registro continuo e individual, no es posible conocer la exposición real de cada trabajador ni demostrarla ante una fiscalización."
+  },
+  "testimonials": {
+    "title": "Lo que dicen nuestros clientes"
+  },
+  "contact": {
+    "title": "¿Quieres conocer EMSafe?",
+    "subtitle": "Solicita una demostración o una cotización, o escríbenos a contacto@emsafe.com.",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "message": "Mensaje",
+    "submit": "Enviar"
+  },
+  "footer": {
+    "navigation": "Navegación",
+    "benefits": "Beneficios",
+    "follow": "Síguenos",
+    "copyright": "© 2026 EMSafe. Todos los derechos reservados.",
+    "privacy": "Política de privacidad",
+    "terms": "Términos y condiciones"
+  },
+  "checkout": {
+    "backToPlans": "Volver a planes",
+    "kicker": "Suscripción EMSafe",
+    "title": "Configura tu plan de monitoreo",
+    "intro": "Revisa tu plan, completa tus datos y activa tu acceso a la app EMSafe.",
+    "selectedPlan": "Plan seleccionado",
+    "progress": "Progreso del checkout",
+    "steps": {
+      "plan": "Plan",
+      "cart": "Carrito",
+      "customer": "Cliente",
+      "payment": "Pago",
+      "confirmation": "Confirmación"
+    },
+    "back": "Volver",
+    "continue": "Continuar",
+    "previous": "Anterior",
+    "perMonth": "/mes",
+    "segmentHome": "Hogar",
+    "emailPlaceholder": "correo@ejemplo.com",
+    "plans": {
+      "premium": {
+        "segment": "Hogar",
+        "price": "S/ 14,90",
+        "description": "Seguimiento completo de los niveles electromagnéticos de tu hogar.",
+        "benefit1": "Incluye todo lo del plan Free",
+        "benefit2": "Historial ilimitado",
+        "benefit3": "Recomendaciones personalizadas",
+        "benefit4": "Reportes descargables"
+      }
+    },
+    "step1": {
+      "label": "Paso 1",
+      "title": "Confirma tu plan"
+    },
+    "step2": {
+      "label": "Paso 2",
+      "title": "Resumen del pedido",
+      "next": "Continuar a tus datos"
+    },
+    "step3": {
+      "label": "Paso 3",
+      "title": "Datos del cliente",
+      "next": "Continuar al pago"
+    },
+    "step4": {
+      "label": "Paso 4",
+      "title": "Completar pago"
+    },
+    "cart": {
+      "label": "Resumen del carrito",
+      "title": "Carrito",
+      "plan": "Plan",
+      "segment": "Segmento",
+      "monthlyPrice": "Precio mensual",
+      "monthlyTotal": "Total mensual"
+    },
+    "customer": {
+      "name": "Nombre completo",
+      "namePlaceholder": "Nombre y apellido",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "type": "Tipo de cliente",
+      "address": "Dirección de instalación",
+      "addressPlaceholder": "Dirección donde se instalará el sensor"
+    },
+    "payment": {
+      "holder": "Nombre del titular",
+      "holderPlaceholder": "Nombre como aparece en la tarjeta",
+      "number": "Número de tarjeta",
+      "expiry": "Fecha de vencimiento",
+      "expiryPlaceholder": "MM/AA",
+      "billingEmail": "Correo de facturación",
+      "payNow": "Pagar ahora",
+      "processing": "Procesando pago..."
+    },
+    "errors": {
+      "name": "Ingresa tu nombre completo.",
+      "email": "Ingresa un correo válido.",
+      "phone": "Ingresa un teléfono válido.",
+      "address": "Ingresa la dirección de instalación.",
+      "cardHolder": "Ingresa el nombre del titular.",
+      "cardNumber": "Ingresa un número de tarjeta válido.",
+      "cardExpiry": "Usa el formato MM/AA.",
+      "cardCvv": "Ingresa un CVV de 3 o 4 dígitos.",
+      "billingEmail": "Ingresa un correo de facturación válido."
+    },
+    "confirmation": {
+      "title": "Pago exitoso",
+      "sent": "Enviaremos a {email} un código de confirmación y las credenciales para registrar tu cuenta en la app EMSafe.",
+      "yourEmail": "tu correo",
+      "next": "Con estas credenciales podrás ingresar a la plataforma y completar la configuración de tu sensor.",
+      "home": "Volver al inicio"
+    }
+  },
+  "login": {
+    "username": "Usuario",
+    "password": "Contraseña",
+    "submit": "Iniciar sesión",
+    "forgot": "¿Olvidaste tu contraseña?",
+    "createAccount": "Crear cuenta",
+    "error": "Usuario o contraseña incorrectos."
+  }
+}

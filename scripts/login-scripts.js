@@ -17,13 +17,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.href = 'dashboard.html';
             }, 1000);
         } else {
-            loginError.textContent = 'Usuario o contraseña incorrectos';
+            loginError.textContent = window.i18n.t('login.error');
             loginError.style.display = 'block';
             // Animación de error
             loginForm.classList.add('error');
             setTimeout(() => {
                 loginForm.classList.remove('error');
             }, 500);
+        }
+    });
+
+    // Si el error ya se muestra, se traduce al cambiar de idioma
+    document.addEventListener('i18n:change', function() {
+        if (loginError.textContent) {
+            loginError.textContent = window.i18n.t('login.error');
         }
     });
 

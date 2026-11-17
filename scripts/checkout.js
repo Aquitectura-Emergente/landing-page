@@ -1,104 +1,46 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const plans = {
-        home: [
-            {
-                id: 'home-basic',
-                name: 'Hogar Basico',
-                range: '0 a 10 sensores',
-                price: 1190,
-                description: 'Ideal para hogares pequenos, departamentos o espacios familiares compactos.',
-                benefits: ['Acceso completo a la plataforma', 'Alertas e historial incluidos', 'Cobertura para zonas principales']
-            },
-            {
-                id: 'home-intermediate',
-                name: 'Hogar Intermedio',
-                range: '10 a 20 sensores',
-                price: 1990,
-                description: 'Pensado para casas medianas con varias habitaciones y areas de trabajo.',
-                benefits: ['Monitoreo por ambientes', 'Mayor cobertura interior', 'Recomendado para familias activas']
-            },
-            {
-                id: 'home-advanced',
-                name: 'Hogar Avanzado',
-                range: '20 a 30 sensores',
-                price: 2790,
-                description: 'Cobertura amplia para viviendas grandes o espacios con varios dispositivos.',
-                benefits: ['Cobertura extendida', 'Seguimiento por zonas', 'Ideal para hogares con oficina o estudio']
-            }
-        ],
-        business: [
-            {
-                id: 'business-initial',
-                name: 'Empresa Inicial',
-                range: '30 a 100 sensores',
-                price: 4890,
-                description: 'Ideal para oficinas pequenas, consultorios o locales comerciales.',
-                benefits: ['Cobertura por areas', 'Gestion desde plataforma', 'Preparado para espacios de atencion']
-            },
-            {
-                id: 'business-professional',
-                name: 'Empresa Profesional',
-                range: '100 a 200 sensores',
-                price: 7990,
-                description: 'Para empresas con multiples ambientes, mayor flujo de personas y monitoreo constante.',
-                benefits: ['Cobertura multiambiente', 'Escalabilidad operativa', 'Recomendado para sedes medianas']
-            },
-            {
-                id: 'business-corporate',
-                name: 'Empresa Corporativa',
-                range: '200 sensores a mas',
-                price: 9990,
-                description: 'Para organizaciones con sedes amplias, instituciones o instalaciones de alta demanda.',
-                benefits: ['Cobertura corporativa', 'Plan preparado para crecimiento', 'Ideal para sedes grandes']
-            }
-        ]
-    };
+    const t = (key, vars) => window.i18n.t(key, vars);
+
+    // Solo Premium pasa por el checkout: Free se activa creando la cuenta y
+    // Business se cotiza desde el formulario de contacto de la landing.
+    // Los textos de cada plan viven en i18n/<idioma>.json bajo checkout.plans.<id>.
+    const plans = [
+        { id: 'premium', name: 'Premium', benefitCount: 4 }
+    ];
 
     const state = {
-        planType: new URLSearchParams(window.location.search).get('type') === 'business' ? 'business' : 'home',
-        selectedPlanId: null,
+        selectedPlanId: plans[0].id,
         step: 1,
         customer: {},
-        billingEmail: ''
+        billingEmail: '',
+        processing: false
     };
 
     const planOptions = document.querySelector('[data-plan-options]');
     const stepPanels = document.querySelectorAll('[data-step]');
     const stepButtons = document.querySelectorAll('[data-step-button]');
-    const typeButtons = document.querySelectorAll('[data-plan-type]');
     const selectedTypeLabels = document.querySelectorAll('[data-selected-type]');
     const customerForm = document.getElementById('customer-form');
     const paymentForm = document.getElementById('payment-form');
-    const customerTypeInput = document.getElementById('customer-type');
-    const customerTypeLabel = document.getElementById('customer-type-label');
-    const businessFields = document.querySelector('[data-business-fields]');
     const payButton = document.querySelector('[data-pay-now]');
+    const payLabel = document.querySelector('[data-pay-label]');
+    const confirmationMessage = document.querySelector('[data-confirmation-message]');
     const checkoutFlow = document.querySelector('.checkout-flow');
 
+    function planText(plan, field) {
+        return t(`checkout.plans.${plan.id}.${field}`);
+    }
+
+    function planBenefits(plan) {
+        return Array.from({ length: plan.benefitCount }, (_, i) => planText(plan, `benefit${i + 1}`));
+    }
+
     function formatPrice(plan) {
-        return `S/ ${plan.price}/mes`;
-    }
-
-    function planTypeLabel(type = state.planType) {
-        return type === 'business' ? 'Empresa' : 'Hogar';
-    }
-
-    function getCurrentPlanList() {
-        return plans[state.planType];
+        return `${planText(plan, 'price')}${t('checkout.perMonth')}`;
     }
 
     function getSelectedPlan() {
-        return getCurrentPlanList().find(plan => plan.id === state.selectedPlanId) || getCurrentPlanList()[0];
-    }
-
-    function selectPlanType(type) {
-        state.planType = type;
-        state.selectedPlanId = plans[type][0].id;
-        if (customerTypeInput) customerTypeInput.value = type;
-        if (customerTypeLabel) customerTypeLabel.value = planTypeLabel(type);
-        renderPlanOptions();
-        updateCartSummary();
-        updateTypeFields();
+        return plans.find(plan => plan.id === state.selectedPlanId) || plans[0];
     }
 
     function selectPlanRange(planId) {
@@ -107,18 +49,27 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCartSummary();
     }
 
+    function renderBenefits(list, items) {
+        list.replaceChildren(...items.map(item => {
+            const li = document.createElement('li');
+            const icon = document.createElement('i');
+            icon.className = 'fas fa-check';
+            li.append(icon, item);
+            return li;
+        }));
+    }
+
     function updateCartSummary() {
         const plan = getSelectedPlan();
-        const benefits = plan.benefits.map(item => `<li><i class="fas fa-check"></i>${item}</li>`).join('');
         setText('[data-cart-name]', plan.name);
-        setText('[data-cart-description]', plan.description);
-        setText('[data-cart-type]', planTypeLabel());
-        setText('[data-cart-range]', plan.range);
+        setText('[data-cart-description]', planText(plan, 'description'));
+        setText('[data-cart-type]', plan.name);
+        setText('[data-cart-range]', planText(plan, 'segment'));
         setText('[data-cart-price]', formatPrice(plan));
         setText('[data-cart-total]', formatPrice(plan));
         setText('[data-confirmation-plan]', plan.name);
         setText('[data-confirmation-price]', formatPrice(plan));
-        document.querySelector('[data-cart-benefits]').innerHTML = benefits;
+        renderBenefits(document.querySelector('[data-cart-benefits]'), planBenefits(plan));
     }
 
     function setText(selector, text) {
@@ -129,21 +80,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function renderPlanOptions() {
         selectedTypeLabels.forEach(label => {
-            label.textContent = planTypeLabel();
+            label.textContent = getSelectedPlan().name;
         });
 
-        typeButtons.forEach(button => {
-            button.classList.toggle('active', button.dataset.planType === state.planType);
-        });
-
-        planOptions.innerHTML = getCurrentPlanList().map(plan => `
+        planOptions.innerHTML = plans.map(plan => `
             <article class="range-card ${plan.id === state.selectedPlanId ? 'selected' : ''}" data-plan-id="${plan.id}" tabindex="0">
                 <h3>${plan.name}</h3>
-                <p class="range">${plan.range}</p>
-                <div class="price">${formatPrice(plan).replace('/mes', '<span>/mes</span>')}</div>
-                <p>${plan.description}</p>
+                <p class="range">${planText(plan, 'segment')}</p>
+                <div class="price">${planText(plan, 'price')}<span>${t('checkout.perMonth')}</span></div>
+                <p>${planText(plan, 'description')}</p>
                 <ul>
-                    ${plan.benefits.map(item => `<li><i class="fas fa-check"></i>${item}</li>`).join('')}
+                    ${planBenefits(plan).map(item => `<li><i class="fas fa-check"></i>${item}</li>`).join('')}
                 </ul>
             </article>
         `).join('');
@@ -182,14 +129,19 @@ document.addEventListener('DOMContentLoaded', function() {
         form.querySelectorAll('.checkout-field').forEach(field => field.classList.remove('has-error'));
         form.querySelectorAll('small[data-error-for]').forEach(error => {
             error.textContent = '';
+            delete error.dataset.errorKey;
         });
     }
 
-    function setFormError(form, name, message) {
+    // Se guarda la clave del mensaje para volver a traducirlo si cambia el idioma
+    function setFormError(form, name, key) {
         const input = form.elements[name];
         const error = form.querySelector(`[data-error-for="${name}"]`);
         if (input) input.closest('.checkout-field').classList.add('has-error');
-        if (error) error.textContent = message;
+        if (error) {
+            error.dataset.errorKey = key;
+            error.textContent = t(key);
+        }
     }
 
     function validateCustomerData() {
@@ -199,38 +151,26 @@ document.addEventListener('DOMContentLoaded', function() {
             customerEmail: customerForm.elements.customerEmail.value.trim(),
             customerPhone: customerForm.elements.customerPhone.value.trim(),
             customerType: customerForm.elements.customerType.value,
-            companyName: customerForm.elements.companyName.value.trim(),
-            companyRuc: customerForm.elements.companyRuc.value.replace(/\D/g, ''),
             installationAddress: customerForm.elements.installationAddress.value.trim()
         };
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         let valid = true;
 
         if (!values.customerName) {
-            setFormError(customerForm, 'customerName', 'Ingresa el nombre completo.');
+            setFormError(customerForm, 'customerName', 'checkout.errors.name');
             valid = false;
         }
         if (!emailPattern.test(values.customerEmail)) {
-            setFormError(customerForm, 'customerEmail', 'Ingresa un correo valido.');
+            setFormError(customerForm, 'customerEmail', 'checkout.errors.email');
             valid = false;
         }
         if (values.customerPhone.length < 7) {
-            setFormError(customerForm, 'customerPhone', 'Ingresa un telefono valido.');
+            setFormError(customerForm, 'customerPhone', 'checkout.errors.phone');
             valid = false;
         }
         if (!values.installationAddress) {
-            setFormError(customerForm, 'installationAddress', 'Ingresa la direccion de instalacion.');
+            setFormError(customerForm, 'installationAddress', 'checkout.errors.address');
             valid = false;
-        }
-        if (values.customerType === 'business') {
-            if (!values.companyName) {
-                setFormError(customerForm, 'companyName', 'Ingresa el nombre de empresa.');
-                valid = false;
-            }
-            if (values.companyRuc.length !== 11) {
-                setFormError(customerForm, 'companyRuc', 'Ingresa un RUC de 11 digitos.');
-                valid = false;
-            }
         }
 
         if (valid) {
@@ -254,23 +194,23 @@ document.addEventListener('DOMContentLoaded', function() {
         let valid = true;
 
         if (!values.cardHolder) {
-            setFormError(paymentForm, 'cardHolder', 'Ingresa el nombre del titular.');
+            setFormError(paymentForm, 'cardHolder', 'checkout.errors.cardHolder');
             valid = false;
         }
         if (values.cardNumber.length < 13) {
-            setFormError(paymentForm, 'cardNumber', 'Ingresa un numero de tarjeta valido.');
+            setFormError(paymentForm, 'cardNumber', 'checkout.errors.cardNumber');
             valid = false;
         }
         if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(values.cardExpiry)) {
-            setFormError(paymentForm, 'cardExpiry', 'Usa el formato MM/AA.');
+            setFormError(paymentForm, 'cardExpiry', 'checkout.errors.cardExpiry');
             valid = false;
         }
         if (values.cardCvv.length < 3) {
-            setFormError(paymentForm, 'cardCvv', 'Ingresa un CVV de 3 o 4 digitos.');
+            setFormError(paymentForm, 'cardCvv', 'checkout.errors.cardCvv');
             valid = false;
         }
         if (!emailPattern.test(values.billingEmail)) {
-            setFormError(paymentForm, 'billingEmail', 'Ingresa un correo de facturacion valido.');
+            setFormError(paymentForm, 'billingEmail', 'checkout.errors.billingEmail');
             valid = false;
         }
 
@@ -281,10 +221,15 @@ document.addEventListener('DOMContentLoaded', function() {
         return valid;
     }
 
+    function updatePayLabel() {
+        payLabel.textContent = t(state.processing ? 'checkout.payment.processing' : 'checkout.payment.payNow');
+    }
+
     function setPaymentProcessing(processing) {
+        state.processing = processing;
         payButton.classList.toggle('is-loading', processing);
         payButton.disabled = processing;
-        payButton.querySelector('span').textContent = processing ? 'Procesando pago...' : 'Pagar ahora';
+        updatePayLabel();
         paymentForm.classList.toggle('is-processing', processing);
         paymentForm.querySelectorAll('input').forEach(input => {
             input.disabled = processing;
@@ -300,9 +245,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1800);
     }
 
+    // El correo lo escribe el usuario: se inserta como texto, nunca como HTML
+    function renderConfirmationMessage() {
+        const email = state.billingEmail || state.customer.customerEmail || t('checkout.confirmation.yourEmail');
+        const [before, after = ''] = t('checkout.confirmation.sent').split('{email}');
+        const strong = document.createElement('strong');
+        strong.textContent = email;
+        confirmationMessage.replaceChildren(before, strong, after);
+    }
+
     function showConfirmation() {
-        const email = state.billingEmail || state.customer.customerEmail || 'tu correo';
-        setText('[data-confirmation-email]', email);
+        renderConfirmationMessage();
         goToCheckoutStep(5);
     }
 
@@ -310,16 +263,15 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'index.html';
     }
 
-    function updateTypeFields() {
-        customerTypeInput.value = state.planType;
-        if (customerTypeLabel) customerTypeLabel.value = planTypeLabel();
-        const isBusiness = state.planType === 'business';
-        businessFields.classList.toggle('is-visible', isBusiness);
+    function renderTexts() {
+        renderPlanOptions();
+        updateCartSummary();
+        updatePayLabel();
+        renderConfirmationMessage();
+        document.querySelectorAll('[data-error-key]').forEach(error => {
+            error.textContent = t(error.dataset.errorKey);
+        });
     }
-
-    typeButtons.forEach(button => {
-        button.addEventListener('click', () => selectPlanType(button.dataset.planType));
-    });
 
     document.querySelectorAll('[data-next-step]').forEach(button => {
         button.addEventListener('click', () => goToCheckoutStep(state.step + 1));
@@ -343,15 +295,11 @@ document.addEventListener('DOMContentLoaded', function() {
         event.target.value = event.target.value.replace(/\D/g, '').slice(0, 4);
     });
 
-    customerForm.elements.companyRuc.addEventListener('input', function(event) {
-        event.target.value = event.target.value.replace(/\D/g, '').slice(0, 11);
-    });
-
     payButton.addEventListener('click', simulatePayment);
 
     window.returnToLanding = returnToLanding;
 
-    selectPlanType(state.planType);
-    updateCartSummary();
+    document.addEventListener('i18n:change', renderTexts);
+    if (window.i18n.loaded) renderTexts();
     goToCheckoutStep(1);
 });

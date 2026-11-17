@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "index": {
+      "title": "EMSafe | Continuous electromagnetic field monitoring",
+      "description": "EMSafe continuously monitors non-ionizing electromagnetic fields, with personal dosimeters for industrial workers and fixed sensors for the home."
+    },
+    "checkout": {
+      "title": "EMSafe | Checkout",
+      "description": "Subscribe to the EMSafe Premium plan for continuous monitoring of electromagnetic levels at home."
+    },
+    "login": {
+      "title": "EMSafe | Sign in",
+      "description": "Sign in to your EMSafe account."
+    }
+  },
+  "nav": {
+    "features": "Features",
+    "plans": "Plans",
+    "about": "About",
+    "problem": "The problem",
+    "contact": "Contact",
+    "signIn": "Sign in",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Continuous monitoring of non-ionizing electromagnetic fields",
+    "text": "EMSafe brings together IoT devices, cloud services, a mobile app, and a web portal to continuously measure each worker's exposure in industrial plants and the levels in every room at home.",
+    "cta": "Request a demo",
+    "imageAlt": "EMSafe dashboard"
+  },
+  "features": {
+    "title": "Key features",
+    "dosimeter": {
+      "title": "Personal dosimeter",
+      "text": "In foundries and metalworking plants, each worker wears a dosimeter that measures their exposure throughout the shift and triggers a local light and sound alert when the threshold for their position is exceeded."
+    },
+    "homeSensor": {
+      "title": "Fixed home sensor",
+      "text": "Measures electromagnetic levels in every room and displays them in the app along with their history. When a risk level is reached, it sends an alert and lets you switch off the smart plug from the app."
+    },
+    "portal": {
+      "title": "OHS manager portal",
+      "text": "The occupational health and safety (OHS) manager sets thresholds for each position from the web portal. Every change is delivered to the dosimeter and recorded in an audit trail."
+    }
+  },
+  "benefits": {
+    "title": "Benefits",
+    "personal": {
+      "title": "Exposure measured on the person",
+      "text": "The app shows each worker their accumulated exposure for the shift against the limit for their position."
+    },
+    "evidence": {
+      "title": "Evidence for inspections",
+      "text": "Alerts and threshold changes are logged and traceable, providing a record for regulatory inspections."
+    },
+    "offline": {
+      "title": "No lost readings",
+      "text": "If the connection drops, the dosimeter stores readings locally and syncs them once it reconnects."
+    },
+    "home": {
+      "title": "Control from the app at home",
+      "text": "Check the levels in each room and switch off the smart plug when a risk level is reached."
+    }
+  },
+  "plans": {
+    "title": "Plans for homes and businesses",
+    "description": "Choose the plan for your segment: room-by-room monitoring at home, or worker exposure monitoring on the plant floor.",
+    "free": {
+      "audience": "To start monitoring your home.",
+      "price": "S/ 0 <span>/month</span>",
+      "f1": "EMSafe mobile app",
+      "f2": "Basic monitoring",
+      "f3": "Threshold alerts",
+      "f4": "7-day history",
+      "f5": "1 device",
+      "cta": "Create account"
+    },
+    "premium": {
+      "audience": "For complete monitoring of your home.",
+      "price": "S/ 14.90 <span>/month</span>",
+      "f1": "Everything in the Free plan",
+      "f2": "Unlimited history",
+      "f3": "Personalized recommendations",
+      "f4": "Downloadable reports",
+      "cta": "Subscribe"
+    },
+    "business": {
+      "badge": "For businesses",
+      "audience": "For foundries and metalworking plants.",
+      "price": "S/ 29 <span>/month per device</span>",
+      "coverage": "Per active IoT device in the field (dosimeter or Edge node).",
+      "f1": "OHS manager portal by area and worker",
+      "f2": "Accumulated exposure per worker",
+      "f3": "Preventive alerts",
+      "f4": "Traceable evidence for inspections",
+      "f5": "Compliance reports",
+      "cta": "Request a quote"
+    }
+  },
+  "about": {
+    "title": "About EMSafe",
+    "product": {
+      "title": "About the product",
+      "text": "EMSafe is a platform for continuous monitoring of non-ionizing electromagnetic fields that brings together IoT devices, cloud services, a mobile app, and a web portal. In foundries and metalworking plants, each worker wears a personal dosimeter, and the occupational health and safety (OHS) manager handles thresholds and evidence from the web portal. At home, a fixed sensor records the levels in each room, and the app can switch off a smart plug when a risk level is reached.",
+      "videoHeading": "Learn more about our product:",
+      "videoTitle": "Video about the EMSafe product"
+    },
+    "team": {
+      "title": "About the team",
+      "text": "We are a team developing IoT solutions that continuously measure exposure to non-ionizing electromagnetic fields, with traceable data for workers, businesses, and households.",
+      "videoHeading": "Meet our team:",
+      "videoTitle": "Video about the EMSafe team"
+    }
+  },
+  "problem": {
+    "title": "The problem",
+    "heading": "The environment is measured, not the person",
+    "text": "Today, exposure to non-ionizing electromagnetic fields is usually assessed through one-off measurement campaigns that capture the level in an area at a single point in time. However, the field weakens with distance from the source: two people in the same area can have very different exposures depending on where they work and how long they stay near the equipment. Without continuous, individual records, it is not possible to know each worker's actual exposure or to demonstrate it during an inspection."
+  },
+  "testimonials": {
+    "title": "What our customers say"
+  },
+  "contact": {
+    "title": "Interested in EMSafe?",
+    "subtitle": "Request a demo or a quote, or write to us at contacto@emsafe.com.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Send"
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "benefits": "Benefits",
+    "follow": "Follow us",
+    "copyright": "© 2026 EMSafe. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions"
+  },
+  "checkout": {
+    "backToPlans": "Back to plans",
+    "kicker": "EMSafe subscription",
+    "title": "Set up your monitoring plan",
+    "intro": "Review your plan, enter your details, and activate your access to the EMSafe app.",
+    "selectedPlan": "Selected plan",
+    "progress": "Checkout progress",
+    "steps": {
+      "plan": "Plan",
+      "cart": "Cart",
+      "customer": "Customer",
+      "payment": "Payment",
+      "confirmation": "Confirmation"
+    },
+    "back": "Back",
+    "continue": "Continue",
+    "previous": "Previous",
+    "perMonth": "/month",
+    "segmentHome": "Home",
+    "emailPlaceholder": "name@example.com",
+    "plans": {
+      "premium": {
+        "segment": "Home",
+        "price": "S/ 14.90",
+        "description": "Complete monitoring of the electromagnetic levels in your home.",
+        "benefit1": "Everything in the Free plan",
+        "benefit2": "Unlimited history",
+        "benefit3": "Personalized recommendations",
+        "benefit4": "Downloadable reports"
+      }
+    },
+    "step1": {
+      "label": "Step 1",
+      "title": "Confirm your plan"
+    },
+    "step2": {
+      "label": "Step 2",
+      "title": "Order summary",
+      "next": "Continue to customer details"
+    },
+    "step3": {
+      "label": "Step 3",
+      "title": "Customer details",
+      "next": "Continue to payment"
+    },
+    "step4": {
+      "label": "Step 4",
+      "title": "Complete payment"
+    },
+    "cart": {
+      "label": "Cart summary",
+      "title": "Cart",
+      "plan": "Plan",
+      "segment": "Segment",
+      "monthlyPrice": "Monthly price",
+      "monthlyTotal": "Monthly total"
+    },
+    "customer": {
+      "name": "Full name",
+      "namePlaceholder": "First and last name",
+      "email": "Email",
+      "phone": "Phone",
+      "type": "Customer type",
+      "address": "Installation address",
+      "addressPlaceholder": "Address where the sensor will be installed"
+    },
+    "payment": {
+      "holder": "Cardholder name",
+      "holderPlaceholder": "Name as it appears on the card",
+      "number": "Card number",
+      "expiry": "Expiration date",
+      "expiryPlaceholder": "MM/YY",
+      "billingEmail": "Billing email",
+      "payNow": "Pay now",
+      "processing": "Processing payment..."
+    },
+    "errors": {
+      "name": "Please enter your full name.",
+      "email": "Please enter a valid email address.",
+      "phone": "Please enter a valid phone number.",
+      "address": "Please enter the installation address.",
+      "cardHolder": "Please enter the cardholder name.",
+      "cardNumber": "Please enter a valid card number.",
+      "cardExpiry": "Use the MM/YY format.",
+      "cardCvv": "Please enter a 3- or 4-digit CVV.",
+      "billingEmail": "Please enter a valid billing email address."
+    },
+    "confirmation": {
+      "title": "Payment successful",
+      "sent": "We will send a confirmation code and the credentials to register your account in the EMSafe app to {email}.",
+      "yourEmail": "your email",
+      "next": "With these credentials, you can sign in to the platform and finish setting up your sensor.",
+      "home": "Back to the home page"
+    }
+  },
+  "login": {
+    "username": "Username",
+    "password": "Password",
+    "submit": "Sign in",
+    "forgot": "Forgot your password?",
+    "createAccount": "Create account",
+    "error": "Incorrect username or password."
+  }
+}
